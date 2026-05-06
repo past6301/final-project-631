@@ -1,12 +1,14 @@
-# Project Title
+# An Analysis on the Impact of NATO Membership on Semiconductor Imports
 
 ## 1. Research Question
 
-What are you investigating, and why does it matter?
+For my final project I decided to examine how NATO membership relates to the amount, in U.S. Dollar, countries import semiconductors. I became interested in learning about semiconductor trade after listening to a podcast on how the industry works. I found it fascinating how it is the backbone of most of todays innovations and yet it is hardly discussed outside of technical circles. Because of its importance to innovation and the technology supply chain, semiconductors are viewed as essential imports to many nations and therefore important for national security. It was this tie to national security that made me curious if NATO countries, which is the largest defensive alliance, have started working towards importing more semiconductors. This could potentially mean that NATO countries are focusing on importing semiconductor both to increase their economies and for national security reasons. This would have implication on Non-Nato countries as they might stuggle to increase the number of semiconductors they import.
 
 ## 2. Hypothesis
 
-State your null and alternative hypotheses clearly and succinctly.
+**Null Hypothesis (H₀):** NATO membership makes no difference in mean semiconductor import value. Any observed difference is completely due to chance
+
+**Alternative Hypothesis (H₁):** NATO countries import a higher amount of semiconductors, in terms of the value in USD of these semiconductors, as compared to Non-NATO countries
 
 ## 3. Data Description
 
