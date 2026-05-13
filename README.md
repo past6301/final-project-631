@@ -19,24 +19,17 @@ Semiconductor Imports: https://oec.world/en/visualize/treemap?dataset=hs17&show=
 
 ## 4. Methods
 
-Summarize how you analyzed the data:
-
-* The test statistic for your permutation test
-* How you simulated or resampled under the null hypothesis
-* The metric(s) for which you created bootstrap confidence intervals
-* Why the CLT does not apply to at least one metric
-
 For my permutation test, I decided to use calculated the mean difference in Trade Value between NATO and Non-NATO countries. I did this for both the raw Trade Value and the Log Trade Value. I then bootstrapped the Mean Raw & Log Trade values. I also decided to try bootstrapping the median as well to see what the differences look like between raw and log trade values and because in this case the Central Limit Theorem (CLT) would not apply to the raw median. Because of the skew in my raw trade data, the CLT would not kick in because the CLT works by normalizing mean overtime. Since the data was so heavily skewed taking the median value does not result in it normalizng to the population. I then created confidence intervals for mean raw and log trade values for NATO and Non-NATO countries.
 
 ## 5. Results
 
-The observed mean difference for the raw trade value was 1186950187.699 and for log trade value it was 1.641. The p-values from the permutation test were 0.0011 and 0.0001 respectivelky meaning under both variations, if we use a cut of of 0.05, we would reject the null hypthesis. Below are the confidence intervals for these trade values:
+The observed mean difference for the raw trade value was 1186950187.699 and for log trade value it was 1.641. The p-values from the permutation test were 0.0114 and 0.0001 respectively meaning under both variations, if we use a cut off of 0.05, we would reject the null hypthesis. Below are the confidence intervals for these trade values:
 
-I am 95% confident that the mean import trade value of semiconductors for NATO countires is between $265,053,364.81 and $3,016,728,968.66.
-I am 95% confident that the mean import trade value of semiconductors for Non-NATO countires is between $197,914,955.72 and $676,327,510.44.
+I am 95% confident that the mean import trade value of semiconductors for NATO countires is between $251,883,256.33 and $3,004,067,564.84.
+I am 95% confident that the mean import trade value of semiconductors for Non-NATO countires is between $196,857,195.22 and $673,319,194.66.
 
-I am 95% confident that the mean log import trade value of semiconductors for NATO countires is between 8.329731 and 8.860119.
-I am 95% confident that the mean log import trade value of semiconductors for Non-NATO countires is between 6.747464 and 7.153637.
+I am 95% confident that the mean log import trade value of semiconductors for NATO countires is between 8.306134 and 8.872488.
+I am 95% confident that the mean log import trade value of semiconductors for Non-NATO countires is between 6.748498 and 7.158085.
 
 ## 6. Uncertainty Estimation
 
