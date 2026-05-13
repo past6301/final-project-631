@@ -12,12 +12,10 @@ For my final project I decided to examine how NATO membership relates to the amo
 
 ## 3. Data Description
 
-Describe your data source(s):
+Because I was interested in examining NATO memberships impact on semiconductor imports I had to find two datasets. Once that contained which countires are members of NATO and one that contained data on the value of how much each country in the world imports (in USD) in semiconductors. I then created a combined dataset with a boolean int value that represented NATO membership (1 - NATO : 0 - Non-NATO). From there the only other values of interest in the original dataset were the Trade Value (how much was imported) and the Country. I then ended up also calculating the log of the trade value for each country to get trade value on a log scale. Countries such as the United States ($21.57B), Hong Kong ($16.22B), and China ($11.7B) were the largest importers. Below are links to the datasets used:
 
-* Where it comes from (URL, API, dataset name)
-* What each observation represents (unit of analysis)
-* Number of observations and key variables
-* Any filtering, cleaning, or transformation steps
+NATO Membership: https://www.worlddata.info/alliances/nato.php#google_vignette
+Semiconductor Imports: https://oec.world/en/visualize/treemap?dataset=hs17&show=country&flow=import&product=2.8541&time=2024
 
 ## 4. Methods
 
@@ -28,30 +26,27 @@ Summarize how you analyzed the data:
 * The metric(s) for which you created bootstrap confidence intervals
 * Why the CLT does not apply to at least one metric
 
+For my permutation test, I decided to use calculated the mean difference in Trade Value between NATO and Non-NATO countries. I did this for both the raw Trade Value and the Log Trade Value. I then bootstrapped the Mean Raw & Log Trade values. I also decided to try bootstrapping the median as well to see what the differences look like between raw and log trade values and because in this case the Central Limit Theorem (CLT) would not apply to the raw median. Because of the skew in my raw trade data, the CLT would not kick in because the CLT works by normalizing mean overtime. Since the data was so heavily skewed taking the median value does not result in it normalizng to the population. I then created confidence intervals for mean raw and log trade values for NATO and Non-NATO countries.
+
 ## 5. Results
 
-Present your main findings:
+The observed mean difference for the raw trade value was 1186950187.699 and for log trade value it was 1.641. The p-values from the permutation test were 0.0011 and 0.0001 respectivelky meaning under both variations, if we use a cut of of 0.05, we would reject the null hypthesis. Below are the confidence intervals for these trade values:
 
-* Key summary statistics and visualizations
-* Observed test statistic and p-value (if applicable)
-* Bootstrap confidence intervals for relevant metrics
+I am 95% confident that the mean import trade value of semiconductors for NATO countires is between $265,053,364.81 and $3,016,728,968.66.
+I am 95% confident that the mean import trade value of semiconductors for Non-NATO countires is between $197,914,955.72 and $676,327,510.44.
+
+I am 95% confident that the mean log import trade value of semiconductors for NATO countires is between 8.329731 and 8.860119.
+I am 95% confident that the mean log import trade value of semiconductors for Non-NATO countires is between 6.747464 and 7.153637.
 
 ## 6. Uncertainty Estimation
 
-Discuss your resampling results:
-
-* How many resamples you used
-* What the bootstrap or randomization distributions looked like
-* How you interpret the interval estimates
+I used 1000 resamples in my bootstrap analysis, this was simply because the machine I ran this on started to struggle with any more resamples than this. For my permutation tests I used 10,000 reruns. My raw permutation test maintained the right skew while the log permutation test was more normally distributed. The CI's for the raw trade values were interesting because the NATO range was quite large while the Non-NATO was significantly smaller.
 
 ## 7. Limitations
 
-Briefly note any limitations in data, assumptions, or methods, including sources of bias or missing data.
+It is to far of a stretch to say that NATO membership causes higher semiconductor imports. While we were able to reject our null hypothesis this does not mean that we can infer our alternative hypothesis was true. There are alot of other factors that should be considered if further inference was to be done. For example, which countries build the chips? What if Non-NATO countires are the primary builder/exporters so they don't rely on imports since they can produce them domestically. What impact does a countries GDP, Population, or other Trade Agreements play on imports. These are all important questions, along with others not mentioned, that should be considered if a full analysis is to be done.
 
 ## 8. References
 
-List all datasets, tools, libraries, or papers you cited.
-
----
-
-**Reminder:** Your README should be clear enough that someone unfamiliar with your work could understand what you studied, how you analyzed it, and what you found.
+NATO Membership: https://www.worlddata.info/alliances/nato.php#google_vignette
+Semiconductor Imports: https://oec.world/en/visualize/treemap?dataset=hs17&show=country&flow=import&product=2.8541&time=2024
